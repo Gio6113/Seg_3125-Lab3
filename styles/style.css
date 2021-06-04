@@ -1,0 +1,248 @@
+
+.title {
+  margin-top: 10%;
+  margin-bottom: 15%;
+  font-size: 2vw;
+  text-transform: uppercase;
+  padding: 1%;
+  color: white !Important;
+  background-color: black;
+  overflow: hidden;
+  margin:-2%;
+  word-spacing: 1.05em;
+  letter-spacing: 0.2em;
+}
+
+body {
+  background-color: black;
+}
+
+.fontsize {
+  float: right !important;
+  align-content: center;
+  border: 2px solid;
+  border-color: #9e9d9d;
+}
+
+/*
+ This style sheet is adapted from  https://www.w3schools.com/howto/howto_js_tabs.asp> for the menu
+*/
+
+.allcheckboxes {
+  margin-bottom: 10%;
+  margin-left: 30%;
+  font-family: 'Roboto','Lato','Arial' !important;
+  text-align: left !important;
+  font-size: 2.5vw;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  color:black;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  width: 20%;
+}
+
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgb(54, 54, 54);
+  color:aqua; 
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: rgb(22, 211, 211);
+}
+
+
+.main-page{
+  background-image: url('images/veggies.jpg');
+  background-attachment: fixed;
+  background-size: 100%;
+  margin-bottom: 5%;
+
+}
+
+
+/*TITLE AND TEXT */
+
+.title {
+  margin-top: 10%;
+  margin-bottom: 15%;
+  font-size: 2vw;
+  text-transform: uppercase;
+  padding: 1%;
+  color: white !Important;
+  background-color: black;
+  overflow: hidden;
+  margin:-2%;
+  word-spacing: 1.05em;
+  letter-spacing: 0.2em;
+}
+
+.maincontainer {
+  margin: 5%;
+  margin-top: 0%;
+  padding: 5%;
+  background-color: white;
+  opacity: 0.85;
+}
+
+.text {
+  text-align: center;
+  font-family: "Lato", "Noto Sans", sans-serif;
+  color:black;
+  word-spacing: 0.2em;
+  font-size: 2vw;
+}
+
+/*FOOTER */
+
+footer {
+  position: relative;
+  padding: 4%;
+  z-index: -12;
+  margin: -1%;
+  height: 3vw;
+  background-color: black;
+}
+
+.footer_class {
+  color: white;
+  float: center;
+}
+
+.footer_date {
+  color: white;
+  float: right;
+}
+
+.footer_message {
+  color: white;
+  float: left;
+}
+
+.footer_sep {
+  background-color: white;
+  height: 110vw;
+  width: 105%;
+  overflow: hidden;
+  margin-top: -103vw;
+  margin-left: -3%;
+  margin-right: -3%;
+  position: relative;
+  z-index: -1;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+html, body {
+  max-width: 100%;
+  height: 100%;
+  margin:0;
+  overflow-x: hidden;
+}
+
+.footer_top {
+  width: 102%;
+  height: 4vw;
+  margin-top: -5%;
+  position: relative;
+  z-index: -8;
+  margin-left: -1%;
+  background-color: black;
+}
+
+
+/* STYLING THE CHECKBOXES, Powerful and simple idea taken from https://www.w3schools.com/howto/howto_css_custom_checkbox.asp*/
+
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.selection{
+  display: block;
+}
+
+.cart{
+  display: none;
+}
+
+.product{
+  display: none;
+}
+
+.checkmark {
+  position: absolute;    
+  font-family: arial;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5%;
+  margin-right: 4%;
+  background-color:lightsalmon;
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  cursor: pointer;
+  font-size: 2.3vw ;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 20%;
+}
+
+
+.container input:checked ~ .checkmark {
+  background-color: salmon;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 25%;
+  top: 0%;
+  width: 35%;
+  height: 65%;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
