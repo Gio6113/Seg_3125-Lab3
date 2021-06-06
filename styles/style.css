@@ -311,6 +311,8 @@ html, body {
 
 }
 
+
+
 .mycart {
   float: right;
 
@@ -320,4 +322,31 @@ html, body {
   width: 30%;
   margin-top: -15%;
   padding-left:5%;
+}
+
+.qtycontrol {
+  display: flex;
+  width:20%;
+}
+
+.more{
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: rgb(40, 115, 177);
+  padding: 1%;
+  flex: 1;
+  border: none;
+}
+
+.qtybox {
+  width: 10%;
+  flex: 1;
+}
+.less{
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: rgb(168, 41, 41);
+  padding: 1%;
+  flex: 1;
+  border: none;
 }
