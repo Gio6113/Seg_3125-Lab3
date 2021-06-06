@@ -40,6 +40,10 @@ function toggleFontSize() {
 		alltexts = document.getElementsByClassName("text");
 		for(i = 0; i<alltexts.length; i++ ){
 			alltexts[i].style.fontSize = newtext;
+		}	
+		btntexts = document.getElementsByClassName("ttt");
+		for(i = 0; i<alltexts.length; i++ ){
+			alltexts[i].style.fontSize = newtext;
 		}		
 		bigger = !bigger;
 	}

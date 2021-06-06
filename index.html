@@ -55,13 +55,12 @@
         <div class="maincontainer">
             <!-- Tab content -->
             <div id="selection" class="selection text">
-                <h3>Your account's selections</h3>
-                <p class="text">Before you shop, set your shopping preferences to only view products relevant to
-                    your needs</p>
-                <p> Come back to "My account" to change them anytime. All modifications are saved automatically.
-                </p>
-
-                <div class="allcheckboxes text">
+                <h2>My account</h2>
+                <br>
+                <h4 class="text">Before you shop, please select your shopping needs to only see relevant products.</h5>
+                <h5> Come back to "My account" to change them anytime. All modifications are saved automatically.</h6>
+          
+                <div class="allcheckboxes">
                     <label class="container">
                         <pre>  Organic</pre>
                         <input type="checkbox" id="checkbox1">
@@ -265,6 +264,18 @@
                 </div>
 
 
+                <div class="prod-container">
+                    <h3 class="prod-title">Carrots</h3>
+                    <h3 class="prod-price">/1</h3>
+
+                    <div class="qtycontrol">
+                        <button class="less" onclick="toggleFontSize()"> - </button>
+                        <input class="qtybox" type="text"></input>
+                        <button class="more" onclick="toggleFontSize()"> +</button>
+                    </div>
+                </div>
+
+
 
 
                 <div class="prod-container">
@@ -277,6 +288,7 @@
                         <button class="more" onclick="toggleFontSize()"> +</button>
                     </div>
                 </div>
+
 
                 <div class="btnwrap">
                     <button id="addCart" type="button" class="btn" onclick="openCart()">
