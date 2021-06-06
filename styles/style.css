@@ -280,6 +280,10 @@ html, body {
   color: rgb(46, 138, 138); 
 }
 
+#fontbtn {
+  float:right;
+  width: 15%;
+}
 
 .carticon {
   max-width:20%;
@@ -302,6 +306,9 @@ html, body {
 
 .myshop {
   float: center !important;
+  margin-left: 20%;
+  max-height: 100%;
+
 }
 
 .mycart {
@@ -310,8 +317,7 @@ html, body {
 }
 
 .fonticon{
-  width: 20%;
+  width: 30%;
   margin-top: -15%;
-  padding-top:5%;
-  padding-left:5%
+  padding-left:5%;
 }

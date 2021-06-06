@@ -19,7 +19,7 @@
     </div>
 
     <!-- IMPORTANT , this code was taken from Caroline Barriere Script for Lab 2:  https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery-->
-  
+
 
     <div class="tab">
 
@@ -30,27 +30,26 @@
             </span>
         </button>
 
-        <button type="button" class="text navbtn myshop" onclick="openProducts()">
-            <span class="btn-text">MY SHOP</span>
-        </button>
-
-        <button type="button" class="text navbtn" id="fontbtn" onclick="toggleFontSize()">
-            <span class="btn-text t1"> aa<b> <u> AA</u></b></span>
-            <span class="btn-icon t2">
-                <img class="fonticon" src="images/zoom-in.png" alt="font+ icon">
-            </span>
-        </button>
-        
         <button type="button" class="text navbtn mycart" onclick="openCart()">
             <span class="btn-text">My Cart</span>
             <span class="btn-icon">
                 <img class="accounticon" src="images/cart.png" alt="Cart icon">
             </span>
         </button>
-    
-       
+        <button type="button" class="text navbtn" id="fontbtn" title="Change text size" onclick="toggleFontSize()">
+            <span class="btn-text t1"> aa<b> <u> AA</u></b></span>
+            <span class="btn-icon t2">
+                <img class="fonticon" src="images/zoom-in.png" alt="font+ icon">
+            </span>
+        </button>
+
+        <button type="button" class="myshop text navbtn" onclick="openProducts()">
+            <span class="btn-text">MY SHOP</span>
+        </button>
+
+
     </div>
-   
+
 
     <div style="background-image: url('images/veggies.jpg');" class="main-page">
         <div class="maincontainer">
@@ -94,6 +93,16 @@
                 <h3>Your targeted products</h3>
                 <p>We preselected products based on your restrictions.</p>
                 <p>Choose items to buy: <br><br></p>
+                <div class="carrots">
+                    <h3 class="prod-title">Carrots</h3>
+                    <h3 class="prod-title">/1</h3>
+
+                    <div class="qtycontrol">
+                        <button class="less" onclick="openProducts()"> - </button>
+                        <input class="qtybox" type="text"></input>
+                        <button class="more" onclick="openProducts()"> +</button>
+                    </div>
+                </div>
                 <div id="displayProduct"></div>
                 <h3>Make sure to add your items to cart :)</h3>
                 <div class="btnwrap">

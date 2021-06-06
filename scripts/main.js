@@ -30,11 +30,11 @@ function toggleFontSize() {
 		if(bigger){
 			newtext = "1.7vw";
 			document.getElementsByClassName("t1")[0].innerHTML = "<b><u>aa</u> </b> AA"
-			// document.getElementsByClassName("t2")[0].innerHTML = "smaller text -"
+			document.getElementsByClassName("fonticon")[0].src = "images/zoom-in.png"
 		}else{
 			newtext = "3vw";
 			document.getElementsByClassName("t1")[0].innerHTML = "aa<b> <u> AA</u></b>"
-			// document.getElementsByClassName("t2")[0].innerHTML = "- smaller text -"
+			document.getElementsByClassName("fonticon")[0].src = "images/zoom-out.svg"
 			
 		}
 		alltexts = document.getElementsByClassName("text");
