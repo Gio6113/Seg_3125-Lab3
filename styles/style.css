@@ -41,19 +41,23 @@ body {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  position: relative;
 }
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
+  align-items: center;
   background-color: inherit;
   color:black;
-  float: left;
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
   transition: 0.3s;
+  font-family: "Lato", "Roboto","Arial";
+  padding: 2%;
+  font-size: 1.7vw;
   width: 20%;
+  height: inherit;
 }
 
 
@@ -98,8 +102,6 @@ body {
   margin: 5%;
   margin-top: 0%;
   padding: 5%;
-  background-color: white;
-  opacity: 0.85;
 }
 
 .text {
@@ -107,7 +109,7 @@ body {
   font-family: "Lato", "Noto Sans", sans-serif;
   color:black;
   word-spacing: 0.2em;
-  font-size: 2vw;
+  font-size: 1.7vw;
 }
 
 /*FOOTER */
@@ -139,11 +141,11 @@ footer {
 .footer_sep {
   background-color: white;
   height: 110vw;
-  width: 105%;
+  width: 103.75%;
   overflow: hidden;
   margin-top: -103vw;
-  margin-left: -3%;
-  margin-right: -3%;
+  margin-left: -2%;
+  margin-right: -2%;
   position: relative;
   z-index: -1;
   border-bottom-left-radius: 10%;
@@ -245,4 +247,71 @@ html, body {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+
+.btn{
+  margin: 7%;
+  padding: 2%;
+  margin-bottom:0%;
+  text-justify: center;
+  background-color: rgb(54, 54, 54);
+  color: aqua;
+  opacity: 100%;
+  font-size: 1.9vw;
+  font-family: 'Lato','Roboto','Lato','Arial';
+  border-radius: 5px;
+
+}
+
+.btn:hover {
+  background-color: white;
+  border: 2px solid;
+  font-weight: 900;
+  border-color: rgb(54, 54, 54);
+  color:rgb(27, 119, 119); 
+
+}
+
+.btn:active {
+  border: 2px solid;
+  border-color: rgb(54, 54, 54);
+  background-color: #9e9d9d;
+  color: rgb(46, 138, 138); 
+}
+
+
+.carticon {
+  max-width:20%;
+  margin-top: -15%;
+  padding-top:5%;
+  padding-left:5%
+}
+
+.accounticon {
+  max-width:20%;
+  margin-top: -15%;
+  padding-top:5%;
+  padding-left:5%
+
+}
+
+.myaccount {
+  float: left;
+}
+
+.myshop {
+  float: center !important;
+}
+
+.mycart {
+  float: right;
+
+}
+
+.fonticon{
+  width: 20%;
+  margin-top: -15%;
+  padding-top:5%;
+  padding-left:5%
 }

@@ -9,6 +9,7 @@ var products = [
 		organic: false,
 		lactosefree: false,
 		nutfree: false,
+		halal: true,
 		price: 1.50,
 	},
 
@@ -17,6 +18,7 @@ var products = [
 		organic: true,
 		lactosefree: true,
 		nutfree: true,
+		halal: true,
 		price: 2.00,
 	},
 
@@ -25,6 +27,7 @@ var products = [
 		organic: false,
 		lactosefree: true,
 		nutfree: true,
+		halal: true,
 		price: 2.00,
 	},
 
@@ -33,6 +36,7 @@ var products = [
 		organic: false,
 		lactosefree: true,
 		nutfree: false,
+		halal: true,
 		price: 2.35,
 	},
 
@@ -41,6 +45,7 @@ var products = [
 		organic: false,
 		lactosefree: true,
 		nutfree: true,
+		halal: true,
 		price: 3.00,
 	},
 
@@ -49,6 +54,7 @@ var products = [
 		organic: true,
 		lactosefree: true,
 		nutfree: false,
+		halal: true,
 		price: 3.50,
 	},
 
@@ -57,6 +63,7 @@ var products = [
 		organic: false,
 		lactosefree: true,
 		nutfree: true,
+		halal: true,
 		price: 4.00,
 	},
 
@@ -65,15 +72,17 @@ var products = [
 		organic: false,
 		lactosefree: true,
 		nutfree: true,
+		halal: true,
 		price: 4.00,
 	},
 
 	{
-		name: "Organic Gummy Bears",
-		organic: true,
+		name: "Gummy Bears",
+		organic: false,
 		lactosefree: true,
 		nutfree: true,
-		price: 4.50,
+		halal: false,
+		price: 2.50,
 	},
 
 
@@ -82,7 +91,9 @@ var products = [
 		organic: true,
 		lactosefree: true,
 		nutfree: true,
+		halal: true,
 		price: 5.00
+		
 	},
 
 	{
@@ -90,7 +101,8 @@ var products = [
 		organic: true,
 		lactosefree: false,
 		nutfree: true,
-		price: 5.50,
+		halal: true,
+		price: 5.49,
 	},
 
 	{
@@ -98,7 +110,8 @@ var products = [
 		organic: false,
 		lactosefree: false,
 		nutfree: true,
-		price: 6.00,
+		halal: true,
+		price: 5.95,
 	},
 
 	{
@@ -106,7 +119,17 @@ var products = [
 		organic: false,
 		lactosefree: false,
 		nutfree: true,
-		price: 7.00,
+		halal: true,
+		price: 6.95,
+	},
+
+	{
+		name: "Chicken Breasts",
+		organic: true,
+		lactosefree: true,
+		nutfree: true,
+		halal: false,
+		price: 12.89,
 	},
 
 	{
@@ -114,7 +137,8 @@ var products = [
 		organic: false,
 		lactosefree: true,
 		nutfree: true,
-		price: 15.00,
+		halal: true,
+		price: 15.89,
 	},
 
 	{
@@ -122,7 +146,8 @@ var products = [
 		organic: true,
 		lactosefree: true,
 		nutfree: true,
-		price: 18.00,
+		halal: true,
+		price: 17.98,
 	},
 
 
@@ -152,6 +177,9 @@ function restrictListProducts(restrictions) {
 				flag = true;
 				
 			}
+			else if ((res == "Halal") && (products[i].halal == false)) {
+				flag = true;			
+			}
 			
 		}
 		if(flag){
@@ -172,5 +200,16 @@ function getTotalPrice(chosenProducts) {
 			totalPrice += products[i].price;
 		}
 	}
-	return totalPrice;
+	
+	roundedPrice = totalPrice.toString();
+	y = roundedPrice.indexOf(".")+3;
+	if (y<roundedPrice.length){
+		if(roundedPrice[y] == "9"){
+			totalPrice+=1;
+			roundedPrice = totalPrice.toString();
+
+		}
+		roundedPrice = roundedPrice.slice(0,y);
+	}
+	return roundedPrice;
 }

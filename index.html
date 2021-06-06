@@ -19,22 +19,48 @@
     </div>
 
     <!-- IMPORTANT , this code was taken from Caroline Barriere Script for Lab 2:  https://github.com/carolinebarriere/carolinebarriere.github.io/tree/master/SEG3125-Module2-Grocery-->
-    <!-- Tab links, each one with an onclick event associated with it -->
+  
+
     <div class="tab">
-        <button class="text tablinks" onclick="openSelections()">Your Selection</button>
-        <button class="text tablinks" onclick="openProducts()">Products</button>
-        <button class="text tablinks" onclick="openCart()">Your Cart</button>
-        <button class="text tablinks fontsize" onclick="toggleFontSize()">+ BIGGER TEXT +</button>
+
+        <button type="button" class="text navbtn myaccount" onclick="openSelections()">
+            <span class="btn-text">My Account</span>
+            <span class="btn-icon">
+                <img class="accounticon" src="images/account.png" alt="Account icon">
+            </span>
+        </button>
+
+        <button type="button" class="text navbtn myshop" onclick="openProducts()">
+            <span class="btn-text">MY SHOP</span>
+        </button>
+
+        <button type="button" class="text navbtn" id="fontbtn" onclick="toggleFontSize()">
+            <span class="btn-text t1"> aa<b> <u> AA</u></b></span>
+            <span class="btn-icon t2">
+                <img class="fonticon" src="images/zoom-in.png" alt="font+ icon">
+            </span>
+        </button>
+        
+        <button type="button" class="text navbtn mycart" onclick="openCart()">
+            <span class="btn-text">My Cart</span>
+            <span class="btn-icon">
+                <img class="accounticon" src="images/cart.png" alt="Cart icon">
+            </span>
+        </button>
+    
+       
     </div>
+   
 
     <div style="background-image: url('images/veggies.jpg');" class="main-page">
         <div class="maincontainer">
             <!-- Tab content -->
             <div id="selection" class="selection text">
                 <h3>Your account's selections</h3>
-                <p class="text">Before you shop, help us display products you are looking for at the moment, by
-                    selecting item
-                    preferences. You can always come back to "your selections" and change them! </p>
+                <p class="text">Before you shop, set your shopping preferences to only view products relevant to
+                    your needs</p>
+                <p> Come back to "My account" to change them anytime. All modifications are saved automatically.
+                </p>
 
                 <div class="allcheckboxes text">
                     <label class="container">
@@ -48,13 +74,17 @@
                         <span class="checkmark"></span>
                     </label>
                     <label class="container">
-                        <pre>  No Lactose</pre>
+                        <pre>  Lactose Free</pre>
                         <input type="checkbox" id="checkbox3">
                         <span class="checkmark"></span>
                     </label>
-                    <div class="startbtn">
-                        <button class="text tablinks" onclick="openProducts()">Start looking for products >>></button>
-                        <div class="startbtn"></div>
+                    <label class="container">
+                        <pre>  Halal</pre>
+                        <input type="checkbox" id="checkbox4">
+                        <span class="checkmark"></span>
+                    </label>
+                    <div class="btnwrap">
+                        <button class="btn" onclick="openProducts()">Begin Shopping >>></button>
                     </div>
                 </div>
             </div>
@@ -66,11 +96,8 @@
                 <p>Choose items to buy: <br><br></p>
                 <div id="displayProduct"></div>
                 <h3>Make sure to add your items to cart :)</h3>
-                <div class="Cart buttons">
-                    <button id="addCart" type="button" class="block text" onclick="selectedItems()">
-                        Add all selected items to cart.
-                    </button>
-                    <button id="addCart" type="button" class="block text" onclick="openCart()">
+                <div class="btnwrap">
+                    <button id="addCart" type="button" class="btn" onclick="openCart()">
                         View Cart 🛒
                     </button>
                 </div>

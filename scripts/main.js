@@ -19,6 +19,7 @@ function openCart(){
 	document.getElementsByClassName("product")[0].style.display = "none";
 	document.getElementsByClassName("cart")[0].style.display = "block";
 	document.getElementsByClassName("selection")[0].style.display = "none";
+	selectedItems();
 
  }
 
@@ -27,11 +28,13 @@ var bigger = false ;
 function toggleFontSize() {
 	var newtext;
 		if(bigger){
-			newtext = "2vw";
-			document.getElementsByClassName("fontsize")[0].innerHTML = "+ BIGGER TEXT +"
+			newtext = "1.7vw";
+			document.getElementsByClassName("t1")[0].innerHTML = "<b><u>aa</u> </b> AA"
+			// document.getElementsByClassName("t2")[0].innerHTML = "smaller text -"
 		}else{
 			newtext = "3vw";
-			document.getElementsByClassName("fontsize")[0].innerHTML = "- smaller text -"
+			document.getElementsByClassName("t1")[0].innerHTML = "aa<b> <u> AA</u></b>"
+			// document.getElementsByClassName("t2")[0].innerHTML = "- smaller text -"
 			
 		}
 		alltexts = document.getElementsByClassName("text");
@@ -61,6 +64,10 @@ function showProductsAndRestrictions(){
 	}
 	if(document.getElementById("checkbox3").checked){
 		var restriction = "Lactose Free";
+		restrictions.push(restriction);
+	}
+	if(document.getElementById("checkbox4").checked){
+		var restriction = "Halal";
 		restrictions.push(restriction);
 	}
 			
@@ -121,6 +128,7 @@ function selectedItems(){
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+	totalPrice = getTotalPrice(chosenProducts)
+	c.appendChild(document.createTextNode("Total Price: " + totalPrice));
 		
 }
