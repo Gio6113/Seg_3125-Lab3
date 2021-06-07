@@ -85,24 +85,27 @@ function showProductsAndRestrictions(){
 			
 		var productName = optionArray[i].name;
 		var productPrice = optionArray[i].price;
-		// create the checkbox and add in HTML DOM
-		var checkbox = document.createElement("input");
-		checkbox.type = "checkbox";
-		checkbox.name = "productDisplayed";
-		checkbox.value = productName;
-		product_list.appendChild(checkbox);
+		// create a custom div 
+		var prod = document.createElement("div");
+		var newContent = document.createElement("h3");
+		newContent.innerHTML = productName;
+		var pricetag = document.createElement("p");
+		pricetag.innerHTML = "PRICE - " + productPrice+" $";
+		var text = document.createElement("input");
+		text.type = "text";
+		text.classList.add("text-input");
+		text.placeholder= "0";
+		text.name = "productDisplayed";
+		text.id = productName;
+
+	
 		
-		// create a label for the checkbox, and also add in HTML DOM
-		var label = document.createElement('label')
-		label.htmlFor = productName;
-		label.appendChild(document.createTextNode(productName));
-		product_list.appendChild(label);
-		var p = product_list.appendChild(document.createElement("p"));
-		p.htmlFor = productName;
-		p.appendChild(document.createTextNode(" PRICE - " + productPrice + " $"));
-		
-		// create a breakline node and add in HTML DOM
-		product_list.appendChild(document.createElement("br"));    
+		prod.appendChild(newContent);
+		prod.appendChild(pricetag);
+		prod.appendChild(text);
+		prod.classList.add("prod-container");
+		product_list.appendChild(prod);
+		 
 	}
 }
 	
@@ -114,6 +117,7 @@ function selectedItems(){
 	
 	var allProducts = document.getElementsByName("productDisplayed");
 	var chosenProducts = [];
+	var chosenQuantities = [];
 	
 	var c = document.getElementById('displayCart');
 	c.innerHTML = "";
@@ -123,16 +127,20 @@ function selectedItems(){
 	para.innerHTML = "You selected : ";
 	para.appendChild(document.createElement("br"));
 	for (i = 0; i < allProducts.length; i++) { 
-		if (allProducts[i].checked) {
-			para.appendChild(document.createTextNode(allProducts[i].value));
+		var thisprod = allProducts[i]
+		if (!(thisprod.value == 0  || thisprod.value == null )) {
+			console.log(thisprod.value);
+			para.appendChild(document.createTextNode(thisprod.id + " : " + getPrice(thisprod.id) + " X " + thisprod.value + " = " + getPrice(thisprod.id)*thisprod.value + " $"));
+			// para.appendChild(document.createTextNode(thisprod.id));
 			para.appendChild(document.createElement("br"));
-			chosenProducts.push(allProducts[i].value);
+			chosenProducts.push(thisprod.id);
+			chosenQuantities.push(thisprod.value);
 		}
 	}
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	totalPrice = getTotalPrice(chosenProducts)
-	c.appendChild(document.createTextNode("Total Price: " + totalPrice));
+	totalPrice = getTotalPrice(chosenProducts, chosenQuantities)
+	c.appendChild(document.createTextNode("Total Price: " + totalPrice + "$$"));
 		
 }

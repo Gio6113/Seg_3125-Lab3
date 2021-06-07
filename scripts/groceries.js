@@ -32,7 +32,7 @@ var products = [
 	},
 
 	{
-		name: "bread",
+		name: "Bread",
 		organic: false,
 		lactosefree: true,
 		nutfree: false,
@@ -164,7 +164,7 @@ function restrictListProducts(restrictions) {
 	for (let i=0; i<products.length; i++) {
 		for (let j=0; j<restrictions.length; j++){
 			var res  = restrictions[j];
-			console.log(res);
+
 			if ((res == "Nut Free") && (products[i].nutfree == false)){
 				flag = true;
 			
@@ -193,23 +193,33 @@ function restrictListProducts(restrictions) {
 }
 
 // Calculate the total price of items, with received parameter being a list of products
-function getTotalPrice(chosenProducts) {
+function getTotalPrice(chosenProducts, quantity) {
 	totalPrice = 0;
 	for (let i=0; i<products.length; i+=1) {
 		if (chosenProducts.indexOf(products[i].name) > -1){
-			totalPrice += products[i].price;
+			totalPrice =  totalPrice + products[i].price * quantity[chosenProducts.indexOf(products[i].name)];
+		
 		}
 	}
 	
-	roundedPrice = totalPrice.toString();
-	y = roundedPrice.indexOf(".")+3;
-	if (y<roundedPrice.length){
-		if(roundedPrice[y] == "9"){
-			totalPrice+=1;
-			roundedPrice = totalPrice.toString();
+	// roundedPrice = totalPrice.toString();
+	// y = roundedPrice.indexOf(".")+3;
+	// if (y<roundedPrice.length){
+	// 	if(roundedPrice[y] == "9"){
+	// 		totalPrice+=1;
+	// 		roundedPrice = totalPrice.toString();
 
-		}
-		roundedPrice = roundedPrice.slice(0,y);
+	// 	}
+	// 	roundedPrice = roundedPrice.slice(0,y);
+	// }
+	return totalPrice;
+
+
+}
+
+function getPrice(id){
+	for (let i=0; i<products.length; i+=1)
+		if (id == products[i].name){
+		return products[i].price;
 	}
-	return roundedPrice;
 }
